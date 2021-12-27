@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //obs se deixar o create depois da linha com /posts/{id} não vai funcionar...
+
+
+Route::any('/posts/search', [PostController::class, 'search'])->name('posts.search');
+Route::put('/posts/{id}', [PostController::class, 'put'])->name('posts.update');
+Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
